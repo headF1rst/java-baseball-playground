@@ -20,17 +20,14 @@ public class StringTest {
     void split() {
         String tc1 = "1,2";
         String tc2 = "1,";
-        String[] resultTC1 = tc1.split(",");
-        String[] resultTC2 = tc2.split(",");
-        assertThat(resultTC1).contains("1", "2");
-        assertThat(resultTC2).containsExactly("1");
+        assertThat(tc1.split(",")).contains("1", "2");
+        assertThat(tc2.split(",")).containsExactly("1");
     }
 
     @Test
     void 괄호제거() {
         String tc = "(1,2)";
-        String result = tc.substring(1, tc.length() - 1);
-        assertThat(result).isEqualTo("1,2");
+        assertThat(tc.substring(1, tc.length() - 1)).isEqualTo("1,2");
     }
 
     @Test
